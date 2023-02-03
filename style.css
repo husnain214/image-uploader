@@ -1,0 +1,209 @@
+:root {
+    --clr-primary: 0 0% 31%;
+    --clr-accent: 214 84% 56%;
+    --clr-neutral-300: 0 0% 100%;
+    --clr-neutral-200: 0 0% 51%;
+    --clr-neutral-100: 0 0% 74%;
+
+    --ff-primary: 'Poppins', sans-serif;
+    --ff-secondary: 'Noto Sans', sans-serif;
+
+    --fs-400: 1.125rem;
+    --fs-300: 0.75rem;
+    --fs-200: 0.625rem;    
+    --fs-100: 0.5rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  letter-spacing: -0.035em;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for and buttons */
+button {
+  font: inherit;
+  letter-spacing: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.bg-primary { background-color: hsl( var(--clr-primary) ); }
+.bg-accent { background-color: hsl( var(--clr-accent) ); }
+.bg-neutral-300 { background-color: hsl( var(--clr-neutral-300) ); }
+.bg-neutral-200 { background-color: hsl( var(--clr-neutral-200) ); }
+.bg-neutral-100 { background-color: hsl( var(--clr-neutral-100) ); }
+
+.text-primary { color: hsl( var(--clr-primary) ); }
+.text-accent { color: hsl( var(--clr-accent) ); }
+.text-neutral-300 { color: hsl( var(--clr-neutral-300) ); }
+.text-neutral-200 { color: hsl( var(--clr-neutral-200) ); }
+.text-neutral-100 { color: hsl( var(--clr-neutral-100) ); }
+
+.ff-primary { font-family: var(--ff-primary); }
+.ff-secondary { font-family: var(--ff-secondary); }
+
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+.fs-100 { font-size: var(--fs-100); }
+
+.fw-500 { font-weight: 500; }
+
+.grid { display: grid; gap: 1rem; }
+.flex { display: flex; gap: 1rem; }
+
+.justify-center { justify-items: center; justify-content: center;}
+.align-center { align-content: center; align-items: center; }
+
+main { min-height: 100vh; }
+
+.display-none { display: none; }
+
+.image-uploader {
+  padding: 2em 1.5em;
+  box-shadow: 0px 4px 12px 0px #0000001A;
+  position: relative;
+  border-radius: 12px;
+}
+
+.drop-area {
+  background-color: hsl( var(--clr-accent) / .08 );
+  padding: 2em 6em;
+  border-radius: 12px;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%2397BEF4FF' stroke-width='3' stroke-dasharray='11' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 12px;
+}
+
+.drop-area > * { 
+  user-select: none; 
+  pointer-events: none;
+}
+
+.file-upload { display: none; }
+.cta-btn { padding: .6em 1.1em; } 
+
+label[for="file-upload" ] { cursor: pointer; }
+
+.progress-container,
+.progress-bar,
+.progress-bar::before,
+.img-wrapper {
+  border-radius: 12px;
+}
+
+.progress-container {
+  width: min(100vw - 2rem, 25rem);
+  padding: 2em;
+  box-shadow: 0px 4px 12px 0px #0000001A;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  position: relative;
+  background-color: hsl( var(--clr-primary) / .09);
+  overflow: hidden;
+}
+
+.progress-bar::before {
+  position: absolute;
+  content: '';
+  inset: 0;
+  background-color: hsl( var(--clr-accent) );
+  width: 30%;
+  animation: progress 2s ease-in infinite;
+}
+
+.tick-icon {
+  --bg-color: 146 64% 36%;
+  height: 40px;
+  width: 40px;
+  background-color: hsl( var(--bg-color) );
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.tick-icon svg {
+  fill: hsl( var(--clr-neutral-300) );
+}
+
+.img-wrapper {
+  width: 30em;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.image-link-wrapper {
+  justify-self: stretch;
+  justify-content: space-between;
+  border: 2px solid hsl( var(--clr-primary) / .1);
+  background-color: hsl( var(--clr-primary) / .09);
+  padding: 1px;
+}
+
+.image-link-wrapper, .cta-btn { border-radius: 12px; }
+.image-link-wrapper p { padding-left: 1rem; }
+.image-link-wrapper .cta-btn { padding: 1em 2em; }
+
+@keyframes progress {
+  0% { 
+    left: -40%; 
+  }
+  100% {
+    left: 100%;
+  }
+}

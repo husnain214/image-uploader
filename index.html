@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="shortcut icon" href="./devchallenges.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="./script.js" defer></script>
+
+  <title>Image Uploader</title>
+</head>
+<body class="grid justify-center align-center">
+  <main class="grid justify-center align-center">
+    <article class="image-uploader grid justify-center align-center bg-neutral">
+      <h1 class="ff-primary text-primary fw-500 fs-400">Upload your image</h1>
+      <p class="ff-primary text-neutral-200 fw-500 fs-200">File should be jpeg, png...</p>
+
+      <div class="drop-area grid justify-center align-center">
+        <img src="./image.svg" alt="upload image here">
+
+        <p class="ff-primary text-neutral-100 fw-500 fs-300">Drag & Drop your image here</p>
+      </div>
+
+      <p class="text-neutral-100 fw-500 ff-primary fs-300">or</p>
+      
+      <label 
+        for="file-upload" 
+        id="buttonlabel" 
+        class="file-upload-btn cta-btn bg-accent text-neutral-300 ff-secondary fs-300 fw-500"
+        tabindex="0"
+        >
+        <span role="button" aria-controls="file-upload">Choose a file</span>
+      </label>
+      
+      <input 
+        type="file" 
+        name="file-upload" 
+        class="file-upload"
+        id="file-upload" 
+        placeholder="Choose a file" 
+        accept="image/*"
+      >
+    </article>
+
+    <article class="progress-container grid display-none">
+      <h2 class="ff-primary text-primary fw-500 fs-400">Uploading your image</h2>
+
+      <div class="progress-bar"></div>
+    </article>
+
+    <article class="image-uploader grid justify-center align-center bg-neutral display-none">
+      <div class="tick-icon bg-accent">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
+        </svg> 
+      </div>
+
+      <h2 class="ff-primary text-primary fw-500 fs-400">Uploaded Successfully!</h2>
+
+      <div class="img-wrapper">
+        <img src="./yo.jpg" alt="" srcset="">
+      </div>
+
+      <div class="image-link-wrapper flex align-center">
+        <p class="ff-primary text-primary fw-500 fs-300">aaaaaaaaaaaaaaa</p>
+        <button class="cta-btn bg-accent text-neutral-300 ff-secondary fs-300 fw-500">Copy Link</button>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
