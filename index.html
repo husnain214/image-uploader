@@ -16,7 +16,7 @@
 </head>
 <body class="grid justify-center align-center">
   <main class="grid justify-center align-center">
-    <article class="image-uploader grid justify-center align-center bg-neutral">
+    <article class="image-uploader grid justify-center align-center bg-neutral-300" id="imageUploader">
       <h1 class="ff-primary text-primary fw-500 fs-400">Upload your image</h1>
       <p class="ff-primary text-neutral-200 fw-500 fs-200">File should be jpeg, png...</p>
 
@@ -47,13 +47,13 @@
       >
     </article>
 
-    <article class="progress-container grid display-none">
+    <article class="progress-container grid bg-neutral-300 display-none" id="progressContainer">
       <h2 class="ff-primary text-primary fw-500 fs-400">Uploading your image</h2>
 
       <div class="progress-bar"></div>
     </article>
 
-    <article class="image-uploader grid justify-center align-center bg-neutral display-none">
+    <article class="upload-success-page image-uploader grid justify-center align-center bg-neutral-300 display-none" id="uploadSuccessPage">
       <div class="tick-icon bg-accent">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
@@ -64,13 +64,11 @@
 
       <h2 class="ff-primary text-primary fw-500 fs-400">Uploaded Successfully!</h2>
 
-      <div class="img-wrapper">
-        <img src="./yo.jpg" alt="" srcset="">
-      </div>
+      <div class="img-wrapper grid align-center justify-center"></div>
 
       <div class="image-link-wrapper flex align-center">
-        <p class="ff-primary text-primary fw-500 fs-300">aaaaaaaaaaaaaaa</p>
-        <button class="cta-btn bg-accent text-neutral-300 ff-secondary fs-300 fw-500">Copy Link</button>
+        <p class="image-link ff-primary text-primary fw-500 fs-300" id="imageLink"></p>
+        <button class="cta-btn bg-accent text-neutral-300 ff-secondary fs-300 fw-500" id="copy-btn">Copy Link</button>
       </div>
     </article>
   </main>
